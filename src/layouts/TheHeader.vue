@@ -14,17 +14,14 @@
 
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <RouterLink class="nav-link" aria-current="page" to="/">Home</RouterLink>
+              <RouterLink class="nav-link" active-class="active" aria-current="page" to="/">Home</RouterLink>
             </li>
             <li class="nav-item">
-              <RouterLink class="nav-link" to="/about">About</RouterLink>
+              <RouterLink class="nav-link" active-class="active" to="/about">About</RouterLink>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/about">About</a>
+              <RouterLink class="nav-link" active-class="active" to="/posts">게시물</RouterLink>
             </li>
           </ul>
 
