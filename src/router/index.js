@@ -26,17 +26,17 @@ const routes = [
   {
     path: '/posts/create',
     component: PostCreateView,
-    name: 'post-create'
+    name: 'posts-create'
   },
   {
     path: '/posts/:id',
     component: PostDetailView,
-    name: 'post-detail'
+    name: 'posts-detail'
   },
   {
     path: '/post/:id/edit',
     component: PostEditView,
-    name: 'post-edit'
+    name: 'posts-edit'
   }
 ]
 const router = createRouter({
