@@ -7,8 +7,10 @@ import PostDetailView from '@/views/PostDetailView.vue'
 
 const posts = ref([]);
 
-const fetchPosts = () => {
-  posts.value = getPosts();
+const fetchPosts = async () => {
+  // ({data: posts.value} = await getPosts());
+  const {data} = await getPosts();
+  posts.value = data;
 }
 const router = useRouter();
 const goPage = id => {

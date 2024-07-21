@@ -5,8 +5,8 @@ import { getPostById } from '@/api/posts.js'
 import { ref } from 'vue'
 
 const router = useRouter()
-// const route = useRoute();
-// const id = route.params.id;
+const route = useRoute();
+const id = route.params.id;
 const props = defineProps({
   id: Number,
 })
@@ -15,8 +15,9 @@ const goEditPage = () => router.push({name: 'posts-edit', params: {id: props.id}
 const form = ref({});
 
 
-const fetchPost = () => {
-  const data = getPostById(props.id);
+const fetchPost = async () => {
+  const {data} = await getPostById(props.id);
+  console.log(data);
   form.value = {...data};
 }
 fetchPost();
