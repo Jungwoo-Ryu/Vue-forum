@@ -26,6 +26,9 @@
             <li class="nav-item">
               <RouterLink class="nav-link" active-class="active" to="/posts/create">게시물 등록</RouterLink>
             </li>
+            <li class="nav-item">
+              <RouterLink class="nav-link" active-class="active" to="/nested">Nested</RouterLink>
+            </li>
           </ul>
 
         </div>

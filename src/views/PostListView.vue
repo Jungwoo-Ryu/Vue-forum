@@ -3,6 +3,7 @@ import {ref} from 'vue';
 import {getPosts} from '@/api/posts';
 import PostItem from '@/components/posts/PostItem.vue'
 import {useRouter} from 'vue-router';
+import PostDetailView from '@/views/PostDetailView.vue'
 
 const posts = ref([]);
 
@@ -41,6 +42,8 @@ fetchPosts()
       </div>
     </div>
   </div>
+  <hr class="my-4" />
+  <PostDetailView :id="2"></PostDetailView>
 </template>
 
 <style scoped>

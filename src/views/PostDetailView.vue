@@ -1,19 +1,35 @@
 <script setup>
 
 import { useRoute, useRouter } from 'vue-router'
+import { getPostById } from '@/api/posts.js'
+import { ref } from 'vue'
 
 const router = useRouter()
-const route = useRoute();
-const id = route.params.id;
+// const route = useRoute();
+// const id = route.params.id;
+const props = defineProps({
+  id: Number,
+})
 const goListPage = () => router.push({name: 'posts-list'});
-const goEditPage = () => router.push({name: 'posts-edit', params: {id} });
+const goEditPage = () => router.push({name: 'posts-edit', params: {id: props.id} });
+const form = ref({});
+
+
+const fetchPost = () => {
+  const data = getPostById(props.id);
+  form.value = {...data};
+}
+fetchPost();
+
+console.log('posts:', props.id, ' ', getPostById(props.id));
+
 </script>
 
 <template>
   <div>
-    <h2>제목</h2>
-    <p>내용</p>
-    <p class="text-muted">aa</p>
+    <h2>{{ form.title }}</h2>
+    <p>{{form.content}}</p>
+    <p class="text-muted">{{form.createdAt}}</p>
     <hr class="my-4"/>
     <div class="row g-2">
       <div class="col-auto">
@@ -35,6 +51,7 @@ const goEditPage = () => router.push({name: 'posts-edit', params: {id} });
     </div>
 
   </div>
+
 </template>
 
 <style scoped>
